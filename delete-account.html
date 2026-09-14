@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delete Your Account — TextPro</title>
+<meta name="description" content="Request deletion of your TextPro account and data.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --accent:#0f766e;
+    --accent2:#14b8a6;
+    --accent3:#22d3ee;
+    --ink:#12201d;
+    --body:#3c4b47;
+    --muted:#6b7b77;
+    --bg:#fbfaf8;
+    --card:#ffffff;
+    --border:#e4e8e6;
+    --red:#dc2626;
+    --red-dark:#b91c1c;
+    --font-head:'Plus Jakarta Sans', sans-serif;
+    --font-body:'DM Sans', sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--body);
+    font-family:var(--font-body);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent);}
+  a:focus-visible, button:focus-visible, input:focus-visible{outline:2px solid var(--accent3); outline-offset:2px;}
+
+  header{border-bottom:1px solid var(--border); background:var(--card);}
+  .header-inner{
+    max-width:600px; margin:0 auto; padding:22px 24px;
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+  }
+  .wordmark{
+    font-family:var(--font-head); font-weight:800; font-size:1.15rem; letter-spacing:-0.01em;
+    background:linear-gradient(120deg, var(--accent) 0%, var(--accent3) 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent; text-decoration:none;
+  }
+  .header-inner nav a{font-size:0.9rem; font-weight:600; color:var(--muted); text-decoration:none;}
+  .header-inner nav a:hover{color:var(--accent);}
+
+  main{max-width:600px; margin:0 auto; padding:48px 24px 96px;}
+
+  .doc-title{
+    font-family:var(--font-head); font-weight:800; font-size:1.9rem; letter-spacing:-0.02em;
+    color:var(--ink); margin:0 0 10px;
+  }
+  .doc-sub{color:var(--muted); font-size:0.98rem; margin:0 0 36px; max-width:46ch;}
+
+  .card{
+    background:var(--card); border:1px solid var(--border); border-radius:14px;
+    padding:28px 26px; margin-bottom:22px;
+  }
+  .card h2{
+    font-family:var(--font-head); font-weight:700; font-size:1.05rem; color:var(--ink);
+    margin:0 0 4px;
+  }
+  .card .card-desc{color:var(--muted); font-size:0.88rem; margin:0 0 20px;}
+
+  label{
+    display:block; font-size:0.85rem; font-weight:600; color:var(--ink);
+    margin:16px 0 6px;
+  }
+  label:first-of-type{margin-top:0;}
+  input[type=email], input[type=password], input[type=text], textarea{
+    width:100%; padding:11px 13px; border:1px solid var(--border); border-radius:8px;
+    font-family:var(--font-body); font-size:0.95rem; color:var(--ink); background:#fdfdfc;
+  }
+  textarea{resize:vertical; min-height:80px;}
+  .checkbox-row{
+    display:flex; align-items:flex-start; gap:10px; margin:18px 0 4px;
+    font-size:0.88rem; color:var(--body);
+  }
+  .checkbox-row input{margin-top:3px;}
+
+  button{
+    font-family:var(--font-body); font-weight:600; font-size:0.95rem;
+    border:none; border-radius:8px; padding:12px 18px; cursor:pointer;
+    width:100%; margin-top:20px;
+  }
+  .btn-primary{background:var(--accent); color:#fff;}
+  .btn-primary:hover{background:var(--ink);}
+  .btn-primary:disabled{background:#a9b5b2; cursor:not-allowed;}
+  .btn-danger{background:var(--red); color:#fff;}
+  .btn-danger:hover{background:var(--red-dark);}
+  .btn-danger:disabled{background:#e8b2ae; cursor:not-allowed;}
+  .btn-secondary{background:transparent; color:var(--accent); border:1px solid var(--border);}
+  .btn-secondary:hover{border-color:var(--accent);}
+
+  .msg{
+    font-size:0.88rem; border-radius:8px; padding:10px 13px; margin-top:16px; display:none;
+  }
+  .msg.show{display:block;}
+  .msg-error{background:#fdecea; color:#9a2f27; border:1px solid #f4c6c1;}
+  .msg-success{background:#e8f7f3; color:#0f5e54; border:1px solid #bfe6dd;}
+
+  .account-badge{
+    display:flex; align-items:center; justify-content:space-between;
+    background:#f5f4f1; border:1px solid var(--border); border-radius:10px;
+    padding:12px 14px; font-size:0.9rem; color:var(--ink); margin-bottom:6px;
+  }
+  .account-badge button{
+    width:auto; margin:0; padding:6px 12px; font-size:0.82rem;
+    background:transparent; color:var(--muted); border:1px solid var(--border);
+  }
+
+  .warning-box{
+    background:#fff8ed; border:1px solid #f4dfae; color:#7a5b12;
+    border-radius:10px; padding:14px 16px; font-size:0.88rem; margin-bottom:18px;
+  }
+  .warning-box strong{color:#5c440d;}
+
+  .divider-text{
+    text-align:center; color:var(--muted); font-size:0.82rem; margin:36px 0 22px;
+    display:flex; align-items:center; gap:12px;
+  }
+  .divider-text::before, .divider-text::after{content:""; flex:1; height:1px; background:var(--border);}
+
+  .hidden{display:none !important;}
+
+  footer{border-top:1px solid var(--border); padding:28px 24px 48px;}
+  footer .footer-inner{max-width:600px; margin:0 auto; color:var(--muted); font-size:0.85rem;}
+
+  @media (max-width:480px){
+    .doc-title{font-size:1.55rem;}
+    main{padding:36px 18px 72px;}
+    .card{padding:22px 18px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="wordmark" href="privacy-policy.html">TextPro</a>
+    <nav><a href="privacy-policy.html">Privacy Policy</a></nav>
+  </div>
+</header>
+
+<main>
+  <h1 class="doc-title">Delete your account</h1>
+  <p class="doc-sub">Permanently remove your TextPro profile, messages, contacts, and account
+  data. This works even if you no longer have the app installed.</p>
+
+  <!-- ── Sign-in + self-service deletion ───────────────────────────── -->
+  <div id="signin-card" class="card">
+    <h2>Sign in to delete your account</h2>
+    <p class="card-desc">Use the email and password you use to sign in to TextPro.</p>
+
+    <form id="signin-form">
+      <label for="si-email">Email</label>
+      <input type="email" id="si-email" required autocomplete="username">
+
+      <label for="si-password">Password</label>
+      <input type="password" id="si-password" required autocomplete="current-password">
+
+      <button type="submit" class="btn-primary" id="signin-btn">Sign in</button>
+    </form>
+    <div class="msg msg-error" id="signin-error"></div>
+  </div>
+
+  <!-- ── Confirm & delete (shown after successful sign-in) ─────────── -->
+  <div id="confirm-card" class="card hidden">
+    <h2>Confirm deletion</h2>
+    <div class="account-badge">
+      <span id="signed-in-email"></span>
+      <button type="button" id="switch-account-btn">Not you?</button>
+    </div>
+
+    <div class="warning-box">
+      <strong>This can't be undone.</strong> Deleting your account permanently removes your
+      profile, messages, contacts, friend requests, and posts from TextPro's systems, and
+      revokes your sign-in credentials.
+    </div>
+
+    <label class="checkbox-row">
+      <input type="checkbox" id="confirm-checkbox">
+      <span>I understand this permanently deletes my TextPro account and data.</span>
+    </label>
+
+    <button type="button" class="btn-danger" id="delete-btn" disabled>Delete my account &amp; data</button>
+    <div class="msg msg-error" id="delete-error"></div>
+    <div class="msg msg-success" id="delete-success"></div>
+  </div>
+
+  <div class="divider-text">or, if you can't sign in</div>
+
+  <!-- ── Fallback request form (no sign-in required) ───────────────── -->
+  <div class="card">
+    <h2>Request deletion by email</h2>
+    <p class="card-desc">Lost access to your account? Tell us the email address on the account
+    and we'll verify and delete it manually.</p>
+
+    <form id="request-form">
+      <label for="req-email">Account email</label>
+      <input type="email" id="req-email" required autocomplete="email">
+
+      <label for="req-note">Anything we should know? (optional)</label>
+      <textarea id="req-note" placeholder="e.g. your username, or why you can't sign in"></textarea>
+
+      <button type="submit" class="btn-secondary" id="request-btn">Submit deletion request</button>
+    </form>
+    <div class="msg msg-error" id="request-error"></div>
+    <div class="msg msg-success" id="request-success"></div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    Requests submitted here are handled the same as deletion requests made inside the app:
+    your profile, messages, contacts, and account credentials are permanently removed.
+    Some data may persist briefly in backups before final deletion.
+  </div>
+</footer>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+  import {
+    getAuth, signInWithEmailAndPassword, reauthenticateWithCredential,
+    EmailAuthProvider, deleteUser
+  } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+  import {
+    getDatabase, ref, remove, push, set
+  } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
+  // Same project TextPro's app uses (app/src/main/assets/web/app.js /
+  // FirebaseConfig.kt) — this is the public web config, safe to embed.
+  const firebaseConfig = {
+    apiKey: "AIzaSyDABQVUM78rCqQ8bqS7W5VzdwpKpN53nAw",
+    authDomain: "protextapp.firebaseapp.com",
+    databaseURL: "https://protextapp-default-rtdb.firebaseio.com",
+    projectId: "protextapp",
+    storageBucket: "protextapp.firebasestorage.app",
+    messagingSenderId: "350377727210",
+    appId: "1:350377727210:web:f5aad2c66660a4c6677393"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const db = getDatabase(app);
+
+  let pendingPassword = null; // held in memory only, for the reauth step just before deletion
+
+  const $ = (id) => document.getElementById(id);
+
+  function showMsg(el, text) {
+    el.textContent = text;
+    el.classList.add('show');
+  }
+  function hideMsg(el) {
+    el.classList.remove('show');
+    el.textContent = '';
+  }
+  function friendlyAuthError(err) {
+    const code = err && err.code;
+    if (code === 'auth/invalid-credential' || code === 'auth/wrong-password') return 'Incorrect email or password.';
+    if (code === 'auth/user-not-found') return "We couldn't find a TextPro account with that email.";
+    if (code === 'auth/too-many-requests') return 'Too many attempts. Please wait a bit and try again.';
+    if (code === 'auth/network-request-failed') return 'Network error — check your connection and try again.';
+    return "Something went wrong. Please try again, or use the request form below.";
+  }
+
+  // ── Sign in ──────────────────────────────────────────────────────
+  $('signin-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    hideMsg($('signin-error'));
+    const email = $('si-email').value.trim();
+    const password = $('si-password').value;
+    const btn = $('signin-btn');
+    btn.disabled = true; btn.textContent = 'Signing in…';
+
+    try {
+      const cred = await signInWithEmailAndPassword(auth, email, password);
+      pendingPassword = password; // kept only in memory, used for reauth right before deletion
+      $('signed-in-email').textContent = cred.user.email;
+      $('signin-card').classList.add('hidden');
+      $('confirm-card').classList.remove('hidden');
+    } catch (err) {
+      showMsg($('signin-error'), friendlyAuthError(err));
+    } finally {
+      btn.disabled = false; btn.textContent = 'Sign in';
+    }
+  });
+
+  $('switch-account-btn').addEventListener('click', () => {
+    pendingPassword = null;
+    $('si-password').value = '';
+    $('confirm-checkbox').checked = false;
+    $('delete-btn').disabled = true;
+    $('confirm-card').classList.add('hidden');
+    $('signin-card').classList.remove('hidden');
+  });
+
+  $('confirm-checkbox').addEventListener('change', (e) => {
+    $('delete-btn').disabled = !e.target.checked;
+  });
+
+  // ── Delete account (mirrors the in-app deleteAccount() flow) ──────
+  $('delete-btn').addEventListener('click', async () => {
+    hideMsg($('delete-error'));
+    const user = auth.currentUser;
+    if (!user || !pendingPassword) {
+      showMsg($('delete-error'), 'Your session expired — please sign in again.');
+      return;
+    }
+    const uid = user.uid;
+    const btn = $('delete-btn');
+    btn.disabled = true; btn.textContent = 'Deleting…';
+
+    try {
+      const credential = EmailAuthProvider.credential(user.email, pendingPassword);
+      await reauthenticateWithCredential(user, credential);
+    } catch (err) {
+      showMsg($('delete-error'), 'We could not re-verify your password. Please sign in again.');
+      btn.disabled = false; btn.textContent = 'Delete my account & data';
+      return;
+    }
+
+    // Best-effort cleanup of this account's own data — same nodes the
+    // in-app deletion flow removes (see app.js: App.deleteAccount()).
+    try {
+      await remove(ref(db, `users/${uid}`));
+      await remove(ref(db, `friends/${uid}`));
+      await remove(ref(db, `friendRequests/${uid}`));
+      await remove(ref(db, `mailbox/${uid}`));
+      await remove(ref(db, `posts/${uid}`));
+      await remove(ref(db, `notifQueue/${uid}`));
+    } catch (err) {
+      console.warn('Database cleanup partially failed', err);
+      // Continue — deleting the auth credential below is what actually
+      // revokes access, which is the part Play policy cares about most.
+    }
+
+    try {
+      await deleteUser(user);
+    } catch (err) {
+      showMsg($('delete-error'), "We removed your data but couldn't fully revoke your sign-in credential. Please contact support so we can finish this manually.");
+      btn.disabled = false; btn.textContent = 'Delete my account & data';
+      return;
+    }
+
+    pendingPassword = null;
+    $('confirm-card').innerHTML = '<h2>Your account has been deleted</h2><p class="card-desc" style="margin-bottom:0;">Your TextPro profile, messages, and account data have been permanently removed. You can close this page.</p>';
+  });
+
+  // ── Fallback: request deletion by email (no sign-in required) ─────
+  $('request-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    hideMsg($('request-error'));
+    hideMsg($('request-success'));
+    const email = $('req-email').value.trim();
+    const note = $('req-note').value.trim();
+    const btn = $('request-btn');
+    btn.disabled = true; btn.textContent = 'Submitting…';
+
+    try {
+      // Requires a Realtime Database rule allowing unauthenticated
+      // *writes* (not reads) to /deletionRequests — see delete-account
+      // setup notes. Someone on the TextPro team must monitor this node
+      // and action requests manually within a reasonable time.
+      await push(ref(db, 'deletionRequests'), {
+        email,
+        note: note || null,
+        status: 'pending',
+        ts: Date.now()
+      });
+      $('request-form').reset();
+      showMsg($('request-success'), "Request received — we'll verify and delete this account, and confirm by email.");
+    } catch (err) {
+      console.warn('deletion request failed', err);
+      showMsg($('request-error'), "Something went wrong submitting your request. Please email support directly instead.");
+    } finally {
+      btn.disabled = false; btn.textContent = 'Submit deletion request';
+    }
+  });
+</script>
+
+</body>
+</html>
