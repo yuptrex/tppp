@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — TextPro</title>
+<meta name="description" content="Privacy Policy for the TextPro messaging app.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --accent:#0f766e;
+    --accent2:#14b8a6;
+    --accent3:#22d3ee;
+    --ink:#12201d;
+    --body:#3c4b47;
+    --muted:#6b7b77;
+    --bg:#fbfaf8;
+    --card:#ffffff;
+    --border:#e4e8e6;
+    --red:#dc2626;
+    --font-head:'Plus Jakarta Sans', sans-serif;
+    --font-body:'DM Sans', sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--body);
+    font-family:var(--font-body);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent);}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--accent3); outline-offset:3px;}
+
+  header{
+    border-bottom:1px solid var(--border);
+    background:var(--card);
+  }
+  .header-inner{
+    max-width:760px;
+    margin:0 auto;
+    padding:22px 24px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+  }
+  .wordmark{
+    font-family:var(--font-head);
+    font-weight:800;
+    font-size:1.15rem;
+    letter-spacing:-0.01em;
+    background:linear-gradient(120deg, var(--accent) 0%, var(--accent3) 100%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    text-decoration:none;
+  }
+  .header-inner nav a{
+    font-size:0.9rem;
+    font-weight:600;
+    color:var(--muted);
+    text-decoration:none;
+    margin-left:20px;
+  }
+  .header-inner nav a:hover{color:var(--accent);}
+
+  main{max-width:760px; margin:0 auto; padding:48px 24px 96px;}
+
+  .doc-title{
+    font-family:var(--font-head);
+    font-weight:800;
+    font-size:2.1rem;
+    letter-spacing:-0.02em;
+    color:var(--ink);
+    margin:0 0 8px;
+  }
+  .doc-meta{
+    color:var(--muted);
+    font-size:0.92rem;
+    margin:0 0 40px;
+  }
+
+  .lede{
+    font-size:1.05rem;
+    color:var(--ink);
+    border-left:3px solid var(--accent2);
+    padding:2px 0 2px 20px;
+    margin:0 0 44px;
+  }
+
+  section{margin:0 0 38px;}
+  section h2{
+    font-family:var(--font-head);
+    font-weight:700;
+    font-size:1.2rem;
+    color:var(--ink);
+    margin:0 0 12px;
+  }
+  section p, section li{font-size:0.98rem;}
+  section ul{padding-left:1.2em; margin:10px 0;}
+  section li{margin-bottom:6px;}
+
+  .callout{
+    background:linear-gradient(135deg, rgba(15,118,110,0.06), rgba(34,211,238,0.06));
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:18px 20px;
+  }
+  .callout h2{margin-top:0;}
+
+  .btn-link{
+    display:inline-block;
+    margin-top:10px;
+    padding:10px 18px;
+    border-radius:8px;
+    background:var(--accent);
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
+    font-size:0.92rem;
+  }
+  .btn-link:hover{background:var(--ink);}
+
+  table{width:100%; border-collapse:collapse; margin:14px 0; font-size:0.92rem;}
+  th, td{text-align:left; padding:9px 12px; border-bottom:1px solid var(--border); vertical-align:top;}
+  th{color:var(--ink); font-weight:600; width:30%;}
+
+  footer{
+    border-top:1px solid var(--border);
+    padding:28px 24px 48px;
+  }
+  footer .footer-inner{
+    max-width:760px;
+    margin:0 auto;
+    color:var(--muted);
+    font-size:0.85rem;
+  }
+
+  @media (max-width:520px){
+    .doc-title{font-size:1.7rem;}
+    main{padding:36px 18px 72px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="wordmark" href="#top">TextPro</a>
+    <nav>
+      <a href="delete-account.html">Delete account</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <h1 class="doc-title">Privacy Policy</h1>
+  <p class="doc-meta">Last updated: September 14, 2026</p>
+
+  <p class="lede">TextPro ("the App", "we") is a messaging app that lets you chat, call, and share
+  media with people you connect with. This policy explains what information we collect,
+  how it's used, and the choices you have. By creating an account you agree to this policy
+  and our Terms of Service.</p>
+
+  <section>
+    <h2>Information we collect</h2>
+    <table>
+      <tr><th>Account info</th><td>Email address and password, handled by Firebase Authentication. We never see or store your raw password ourselves.</td></tr>
+      <tr><th>Profile info</th><td>Display name, username, bio, and avatar image you choose to provide.</td></tr>
+      <tr><th>Age</th><td>Your birth year and an age-verified flag, collected at signup to confirm you meet the minimum age requirement. We do not store your full date of birth.</td></tr>
+      <tr><th>Messages &amp; media</th><td>Text, photos, voice messages, and files you send are stored to deliver them, then removed according to our retention rules.</td></tr>
+      <tr><th>Device info</th><td>A push-notification token, used only to deliver notifications to your device.</td></tr>
+      <tr><th>Camera &amp; microphone</th><td>Accessed only when you actively use camera capture, voice messages, or calling features — and only while you're using them.</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>How we use information</h2>
+    <p>We use your information to create and secure your account, deliver messages and calls
+    between you and people you chat with, show you push notifications, and maintain basic
+    app functionality — for example, showing your online status to people you message.
+    We do not sell your personal information.</p>
+  </section>
+
+  <section class="callout">
+    <h2>AI features</h2>
+    <p>TextPro includes an optional AI Assistant you can chat with. When you use it, the
+    messages, photos, and voice messages you send to the AI Assistant are transmitted to
+    <strong>Google's Gemini API</strong> (Google Generative Language API) for processing, so
+    it can generate a reply, describe an image, or respond to a voice message. This only
+    happens for content you send directly to the AI Assistant — not your other conversations.</p>
+    <p>Google's handling of this data is governed by
+    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>
+    and the <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener">Gemini API Additional Terms of Service</a>
+    in addition to this policy. Do not send information to the AI Assistant that you would
+    not want processed by a third-party AI provider.</p>
+  </section>
+
+  <section>
+    <h2>Voice &amp; video calls</h2>
+    <p>Calls are connected peer-to-peer where possible. A signaling message — who is calling
+    whom, and connection setup data — passes through our servers to establish the call, but
+    call audio and video are not stored or recorded by us.</p>
+  </section>
+
+  <section>
+    <h2>Data retention &amp; deletion</h2>
+    <p>You can delete your account at any time from Settings inside the app, which removes
+    your profile, messages, and account data from our systems. Some data may persist briefly
+    in backups before final deletion.</p>
+    <p>You can also request account and data deletion without opening the app, from our
+    web-based deletion page:</p>
+    <a class="btn-link" href="delete-account.html">Request account deletion →</a>
+  </section>
+
+  <section>
+    <h2>Third-party services</h2>
+    <ul>
+      <li><strong>Firebase (Google)</strong> — authentication, real-time data storage, and hosting our backend. Governed by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</li>
+      <li><strong>Google Gemini API (Google Generative Language API)</strong> — powers the optional AI Assistant feature, as described above.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Your choices</h2>
+    <p>You can edit or delete your profile information, block or report other users, disable
+    notifications in your device settings, and delete your account and data at any time —
+    either from within the app, or from our <a href="delete-account.html">web deletion page</a>.</p>
+  </section>
+
+  <section>
+    <h2>Children's privacy</h2>
+    <p>The App is not directed at children under 13 (or the minimum age required in your
+    country), and we do not knowingly collect data from them.</p>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>Questions about this policy can be sent to
+    <a href="mailto:support@textproapp.example">support@textproapp.example</a>
+    — replace this with your real support address before publishing.</p>
+  </section>
+
+  <section>
+    <h2>Changes to this policy</h2>
+    <p>We may update this policy from time to time. Continued use of the App after changes
+    means you accept the updated policy.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    TextPro — this page is a template covering the app's actual features (Firebase auth/storage,
+    calling, and the Gemini-powered AI Assistant). Review it against your real data practices,
+    fill in your real support contact, and host it at a public URL before submitting to Google Play.
+  </div>
+</footer>
+
+</body>
+</html>
